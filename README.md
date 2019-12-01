@@ -56,6 +56,8 @@ Remarques:
 - Le vampirisme s'applique uniquement si l'attaque touche et ne dépend pas de la valeur de l'attaque (ie si vous avez 12 de vampirisme et que vous mettez 2 de dégats vous soignerez 12 pv)
 
 ## Zone de combat
+![](ressources/images/readme/combat_zone.png)
+
 Barre de vie du personnage, attaques possibles, zone de saisie de votre nombre de tour que vous voulez jouer, intention du mob, barre de vie du mob, stats du mob, zone d'info.
 
 Fonctionnement des attaques:
@@ -73,3 +75,10 @@ Déroulement du combat:
 - Renvoit des degats du mob ou non
 - Vampirism + poison sur le mob si l'attaque touche
 - Tour du monstre dans le même ordre
+
+Calcul des dégats:
+real_damage = Math.round(base_damage x (1-base_reduction_percent_opponent/100))-base_reduction_opponent;
+
+Remarques:
+- La nature des dégats renvoyés correspond à celle de l'attaque qui est renvoyé
+- Les dégats renvoyés sont réduits par les % et fix reduction
