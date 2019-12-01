@@ -5,5 +5,5 @@ Petit jeu Rogue Like fait a l'arrache (code dupliqué, aucunes connaissances en 
 Mais sinon c'est rigolo. A+
 
 # Tutoriel
-![Image description](images/readme/interface.png)
+![Image description](/images/readme/interface.png)
 
