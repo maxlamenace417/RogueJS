@@ -43,7 +43,14 @@ Calcul des statistiques:
 - XXX %Damage Reduction: Math.round(10x40x(1 - 1/(XXX_stats/1000+1)))/10;
 - Returned Damage, Critical Chance et Parade Chance: Math.round(10x50x(1 - 1/(XXX_stats/1000+1)))/10;
 
+Cout des statistiques:
+- Life, Magic, Strength et Dexterity: value // 100 + 1  (ie 1 de 0 à 100, 2 de 101 à 200, 3 de 201 à 300...)
+- XXX Damage: value x 5 + 5 (ie 5 pour 1, 10 pour 2, 15 pour 3...)
+- Poison: value x 10 + 10 (ie 10 pour 1, 20 pour 2, 30 pour 3...)
+- Vampirism: value x 6 + 6 (ie 6 pour 1, 12 pour 2, 18 pour 3...)
+- Gold: value x 3 + 3 (ie 3 pour 1, 6 pour 2, 9 pour 3...)
+
 Remarques:
 - Le dot de poison sur le personnage reste entre les combats mais est réinitialisé à la mort ![](ressources/images/readme/poisoned.png)
-- Les dots de poison se stacke
+- Les dots de poison se stackent
 - Le vampirisme s'applique uniquement si l'attaque touche et ne dépend pas de la valeur de l'attaque (ie si vous avez 12 de vampirisme et que vous mettez 2 de dégats vous soignerez 12 pv)
