@@ -82,3 +82,14 @@ real_damage = Math.round(base_damage x (1-base_reduction_percent_opponent/100))-
 Remarques:
 - La nature des dégats renvoyés correspond à celle de l'attaque qui est renvoyé
 - Les dégats renvoyés sont réduits par les % et fix reduction
+
+## Shop
+![](ressources/images/readme/shop_zone.png)
+
+Prix des items:
+- Diamants: 10 pièces
+- Heal 50% des pv manquants: 10 pièces
+- Heal 50% du dot de poison: 10 pièces
+- Pièces: 1 diamants pour 5
+- 1 de dégat direct au mob: 2 PV
+- Suicide
