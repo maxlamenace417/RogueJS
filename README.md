@@ -14,13 +14,16 @@ L'interface est découpée en plusieurs zones:
 
 ## Menu
 ![](ressources/images/readme/menu_zone.png)
+
 Le menu permet d'afficher les diamants et pièces que vous possédez. Vous pouvez ausssi sauvegarder et enregistrer votre partie.
 - Diamants: Les diamants sont gardés à la mort
 - Pièces: Les pièces sont perdues à la mort
 
 ## Zone de personnage
 ![](ressources/images/readme/character_zone.png)
+
 La zone de personnages contient la feuille de stats et les items du personnage (à venir... pitètre).
+
 Statistiques:
 - Life: Vie du personnage (à 0 vous êtes mort)
 - Magic: Permet d'augmenter les dégats magiques, la %resistance magique et les dommages retournés
