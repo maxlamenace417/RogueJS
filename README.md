@@ -54,3 +54,22 @@ Remarques:
 - Le dot de poison sur le personnage reste entre les combats mais est réinitialisé à la mort ![](ressources/images/readme/poisoned.png)
 - Les dots de poison se stackent
 - Le vampirisme s'applique uniquement si l'attaque touche et ne dépend pas de la valeur de l'attaque (ie si vous avez 12 de vampirisme et que vous mettez 2 de dégats vous soignerez 12 pv)
+
+## Zone de combat
+Barre de vie du personnage, attaques possibles, zone de saisie de votre nombre de tour que vous voulez jouer, intention du mob, barre de vie du mob, stats du mob, zone d'info.
+
+Fonctionnement des attaques:
+- La couleur de fond de l'image (bleu, rouge ou vert) correspond à l'élément dans lequel vous ferez des dégats
+- L'image correspond à l'effet de l'attaque (renvoit de dégat, coup critique et parade)
+- Si vous voulez jouer plusieurs tours de suite de la même manière rentrez le nombre de tour voulu dans la zone de saisie
+
+Par exemple: ![](ressources/images/actions/critical_magic.png) Attaque magique avec tentative de coup critique
+
+Déroulement du combat:
+- Dot de poison sur le joueur
+- Attaque du joueur
+- Calcul de critique ou non
+- Parade du mob ou non
+- Renvoit des degats du mob ou non
+- Vampirism + poison sur le mob si l'attaque touche
+- Tour du monstre dans le même ordre
