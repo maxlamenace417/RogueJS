@@ -40,5 +40,8 @@ Statistiques:
 - Gold: Nombre de pièces gagnées en plus à chaque combat gagné
 
 Calcul des statistiques:
-- XXX %Damage Reduction: Math.round(10*40*(1 - 1/(XXX_stats/1000+1)))/10;
-- Returned Damage, Critical Chance et Parade Chance: Math.round(10*50*(1 - 1/(XXX_stats/1000+1)))/10;
+- XXX %Damage Reduction: Math.round(10x40x(1 - 1/(XXX_stats/1000+1)))/10;
+- Returned Damage, Critical Chance et Parade Chance: Math.round(10x50x(1 - 1/(XXX_stats/1000+1)))/10;
+
+Remarques:
+- Le dot de poison sur le personnage reste entre les combats mais est réinitialisé à la mort ![](ressources/images/readme/poisoned.png)
