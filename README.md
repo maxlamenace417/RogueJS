@@ -38,3 +38,7 @@ Statistiques:
 - Poison: Dot de poison appliqué au monstre à chaque coup porté
 - Vampirism: Nombre de PV soigné à chaque coup porté
 - Gold: Nombre de pièces gagnées en plus à chaque combat gagné
+
+Calcul des statistiques:
+- XXX %Damage Reduction: Math.round(10*40*(1 - 1/(XXX_stats/1000+1)))/10;
+- Returned Damage, Critical Chance et Parade Chance: Math.round(10*50*(1 - 1/(XXX_stats/1000+1)))/10;
