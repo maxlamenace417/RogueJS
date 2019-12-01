@@ -1,0 +1,801 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>&#128585; RogueJS</title>
+		<link rel="stylesheet" type="text/css" href="RogueJS.css">		
+	</head>
+	<body>
+		<div id="menu">
+			<div id="money">
+				<div id="diamonds">
+					<img src="ressources/images/default/diamonds.png" />
+					Diamonds:
+					<span id="diamonds_count">
+						xx
+					</span>
+				</div>
+				&nbsp
+				<div id="coins">
+					<img src="ressources/images/default/coins.png" />
+					Coins:
+					<span id="coins_count">
+						xx
+					</span>
+				</div>
+			</div>		
+			<div id="save">
+				<button onclick="save()">Save</button>
+				<button onclick="load()">Load</button>
+			</div>
+		</div>
+		<div id="main_div">
+			<div id="character_div">
+				<div id="character_stats_sheet">
+					<div id="character_stats_sheet_title">
+						Character Stats Sheet
+					</div>
+					<div id="_life" class="stats_line">					
+						<img src="ressources/images/mini_icons/_life.png" />
+						Life:
+						<span id="_reallife_stat">
+							xx
+						</span>
+						/
+						<span id="_life_stat" class="bold">
+							xx
+						</span>
+						(
+						<span id="_life_stat_character">
+							xx
+						</span>
+						+
+						<span id="_life_stat_stuffs">
+							xx
+						</span>
+						)
+						<div class="stats_buttons">
+							<span id="_life_stat_cost">
+								xx
+							</span>
+							<img src="ressources/images/default/diamonds.png" />
+							<button onclick="BuyStat('_life',1)">+1</button>
+							<button onclick="BuyStat('_life',10)">+10</button>
+							<button onclick="BuyStat('_life',100)">+100</button>
+							<button onclick="BuyStats('_life')">Max</button>
+						</div>
+					</div>
+					<div id="_magic" class="stats_line">					
+						<img src="ressources/images/mini_icons/_magic.png" />
+						Magic:
+						<span id="_magic_stat" class="bold">
+							xx
+						</span>
+						(
+						<span id="_magic_stat_character">
+							xx
+						</span>
+						+
+						<span id="_magic_stat_stuffs">
+							xx
+						</span>
+						)
+						<div class="stats_buttons">
+							<span id="_magic_stat_cost">
+								xx
+							</span>
+							<img src="ressources/images/default/diamonds.png" />
+							<button onclick="BuyStat('_magic',1)">+1</button>
+							<button onclick="BuyStat('_magic',10)">+10</button>
+							<button onclick="BuyStat('_magic',100)">+100</button>
+							<button onclick="BuyStats('_magic')">Max</button>
+						</div>
+					</div>
+					<div id="_strength" class="stats_line">					
+						<img src="ressources/images/mini_icons/_strength.png" />
+						Strength:
+						<span id="_strength_stat" class="bold">
+							xx
+						</span>
+						(
+						<span id="_strength_stat_character">
+							xx
+						</span>
+						+
+						<span id="_strength_stat_stuffs">
+							xx
+						</span>
+						)
+						<div class="stats_buttons">
+							<span id="_strength_stat_cost">
+								xx
+							</span>
+							<img src="ressources/images/default/diamonds.png" />
+							<button onclick="BuyStat('_strength',1)">+1</button>
+							<button onclick="BuyStat('_strength',10)">+10</button>
+							<button onclick="BuyStat('_strength',100)">+100</button>
+							<button onclick="BuyStats('_strength')">Max</button>
+						</div>
+					</div>
+					<div id="_dexterity" class="stats_line">					
+						<img src="ressources/images/mini_icons/_dexterity.png" />
+						Dexterity:
+						<span id="_dexterity_stat" class="bold">
+							xx
+						</span>
+						(
+						<span id="_dexterity_stat_character">
+							xx
+						</span>
+						+
+						<span id="_dexterity_stat_stuffs">
+							xx
+						</span>
+						)
+						<div class="stats_buttons">
+							<span id="_dexterity_stat_cost">
+								xx
+							</span>
+							<img src="ressources/images/default/diamonds.png" />
+							<button onclick="BuyStat('_dexterity',1)">+1</button>
+							<button onclick="BuyStat('_dexterity',10)">+10</button>
+							<button onclick="BuyStat('_dexterity',100)">+100</button>
+							<button onclick="BuyStats('_dexterity')">Max</button>
+						</div>
+					</div>
+					<div id="_damage_increase_magic" class="stats_line">					
+						<img src="ressources/images/mini_icons/_damage_increase_magic.png" />
+						Magic Damage:
+						<span id="_damage_increase_magic_stat" class="bold">
+							xx
+						</span>
+						(
+						<span id="_damage_increase_magic_stat_character">
+							xx
+						</span>
+						+
+						<span id="_damage_increase_magic_stat_stuffs">
+							xx
+						</span>
+						)
+						<div class="stats_buttons">
+							<span id="_damage_increase_magic_stat_cost">
+								xx
+							</span>
+							<img src="ressources/images/default/diamonds.png" />
+							<button onclick="BuyStat('_damage_increase_magic',1)">+1</button>
+							<button onclick="BuyStat('_damage_increase_magic',10)">+10</button>
+							<button onclick="BuyStat('_damage_increase_magic',100)">+100</button>
+							<button onclick="BuyStats('_damage_increase_magic')">Max</button>
+						</div>
+					</div>
+					<div id="_damage_reduction_magic" class="stats_line">					
+						<img src="ressources/images/mini_icons/_damage_reduction_magic.png" />
+						Magic Damage Reduction:
+						<span id="_damage_reduction_magic_stat" class="bold">
+							xx
+						</span>
+					</div>
+					<div id="_damage_reduction_magic_percent" class="stats_line">					
+						<img src="ressources/images/mini_icons/_damage_reduction_magic_percent.png" />
+						Magic %Damage Reduction:
+						<span id="_damage_reduction_magic_percent_stat" class="bold">
+							xx
+						</span>
+						%
+					</div>
+					<div id="_damage_increase_strength" class="stats_line">					
+						<img src="ressources/images/mini_icons/_damage_increase_strength.png" />
+						Strength Damage:
+						<span id="_damage_increase_strength_stat" class="bold">
+							xx
+						</span>
+						(
+						<span id="_damage_increase_strength_stat_character">
+							xx
+						</span>
+						+
+						<span id="_damage_increase_strength_stat_stuffs">
+							xx
+						</span>
+						)
+						<div class="stats_buttons">
+							<span id="_damage_increase_strength_stat_cost">
+								xx
+							</span>
+							<img src="ressources/images/default/diamonds.png" />
+							<button onclick="BuyStat('_damage_increase_strength',1)">+1</button>
+							<button onclick="BuyStat('_damage_increase_strength',10)">+10</button>
+							<button onclick="BuyStat('_damage_increase_strength',100)">+100</button>
+							<button onclick="BuyStats('_damage_increase_strength')">Max</button>
+						</div>
+					</div>
+					<div id="_damage_reduction_strength" class="stats_line">					
+						<img src="ressources/images/mini_icons/_damage_reduction_strength.png" />
+						Strength Damage Reduction:
+						<span id="_damage_reduction_strength_stat" class="bold">
+							xx
+						</span>
+					</div>
+					<div id="_damage_reduction_strength_percent" class="stats_line">					
+						<img src="ressources/images/mini_icons/_damage_reduction_strength_percent.png" />
+						Strength %Damage Reduction:
+						<span id="_damage_reduction_strength_percent_stat" class="bold">
+							xx
+						</span>
+						%
+					</div>
+					<div id="_damage_increase_dexterity" class="stats_line">					
+						<img src="ressources/images/mini_icons/_damage_increase_dexterity.png" />
+						Dexterity Damage:
+						<span id="_damage_increase_dexterity_stat" class="bold">
+							xx
+						</span>
+						(
+						<span id="_damage_increase_dexterity_stat_character">
+							xx
+						</span>
+						+
+						<span id="_damage_increase_dexterity_stat_stuffs">
+							xx
+						</span>
+						)
+						<div class="stats_buttons">
+							<span id="_damage_increase_dexterity_stat_cost">
+								xx
+							</span>
+							<img src="ressources/images/default/diamonds.png" />
+							<button onclick="BuyStat('_damage_increase_dexterity',1)">+1</button>
+							<button onclick="BuyStat('_damage_increase_dexterity',10)">+10</button>
+							<button onclick="BuyStat('_damage_increase_dexterity',100)">+100</button>
+							<button onclick="BuyStats('_damage_increase_dexterity')">Max</button>
+						</div>
+						
+					</div>
+					<div id="_damage_reduction_dexterity" class="stats_line">					
+						<img src="ressources/images/mini_icons/_damage_reduction_dexterity.png" />
+						Dexterity Damage Reduction:
+						<span id="_damage_reduction_dexterity_stat" class="bold">
+							xx
+						</span>
+					</div>
+					<div id="_damage_reduction_dexterity_percent" class="stats_line">					
+						<img src="ressources/images/mini_icons/_damage_reduction_dexterity_percent.png" />
+						Dexterity %Damage Reduction:
+						<span id="_damage_reduction_dexterity_percent_stat" class="bold">
+							xx
+						</span>
+						%
+					</div>
+					<div id="_return_percent" class="stats_line">					
+						<img src="ressources/images/mini_icons/_return_percent.png" />
+						Returned Damage:
+						<span id="_return_percent_stat" class="bold">
+							xx
+						</span>
+						%
+					</div>
+					<div id="_critical_chance" class="stats_line">					
+						<img src="ressources/images/mini_icons/_critical_chance.png" />
+						Critical Chance:
+						<span id="_critical_chance_stat" class="bold">
+							xx
+						</span>
+						%
+					</div>
+					<div id="_parade_chance" class="stats_line">					
+						<img src="ressources/images/mini_icons/_parade_chance.png" />
+						Parade Chance:
+						<span id="_parade_chance_stat" class="bold">
+							xx
+						</span>
+						%
+					</div>
+					<div id="_poison" class="stats_line">					
+						<img src="ressources/images/mini_icons/_poison.png" />
+						Poison:
+						<span id="_poison_stat" class="bold">
+							xx
+						</span>
+						(
+						<span id="_poison_stat_character">
+							xx
+						</span>
+						+
+						<span id="_poison_stat_stuffs">
+							xx
+						</span>
+						)
+						&nbsp
+						<span id="_poisoned_stat" class="bold red">
+							xx
+						</span>
+						<div class="stats_buttons">
+							<span id="_poison_stat_cost">
+								xx
+							</span>
+							<img src="ressources/images/default/diamonds.png" />
+							<button onclick="BuyStat('_poison',1)">+1</button>
+							<button onclick="BuyStat('_poison',10)">+10</button>
+							<button onclick="BuyStat('_poison',100)">+100</button>
+							<button onclick="BuyStats('_poison')">Max</button>
+						</div>
+					</div>
+					<div id="_vampirism" class="stats_line">					
+						<img src="ressources/images/mini_icons/_vampirism.png" />
+						Vampirism:
+						<span id="_vampirism_stat" class="bold">
+							xx
+						</span>
+						(
+						<span id="_vampirism_stat_character">
+							xx
+						</span>
+						+
+						<span id="_vampirism_stat_stuffs">
+							xx
+						</span>
+						)
+						<div class="stats_buttons">
+							<span id="_vampirism_stat_cost">
+								xx
+							</span>
+							<img src="ressources/images/default/diamonds.png" />
+							<button onclick="BuyStat('_vampirism',1)">+1</button>
+							<button onclick="BuyStat('_vampirism',10)">+10</button>
+							<button onclick="BuyStat('_vampirism',100)">+100</button>
+							<button onclick="BuyStats('_vampirism')">Max</button>
+						</div>
+					</div>
+					<div id="_gold" class="stats_line">					
+						<img src="ressources/images/mini_icons/_gold.png" />
+						Gold:
+						<span id="_gold_stat" class="bold">
+							xx
+						</span>
+						(
+						<span id="_gold_stat_character">
+							xx
+						</span>
+						+
+						<span id="_gold_stat_stuffs">
+							xx
+						</span>
+						)
+						<div class="stats_buttons">
+							<span id="_gold_stat_cost">
+								xx
+							</span>
+							<img src="ressources/images/default/diamonds.png" />
+							<button onclick="BuyStat('_gold',1)">+1</button>
+							<button onclick="BuyStat('_gold',10)">+10</button>
+							<button onclick="BuyStat('_gold',100)">+100</button>
+							<button onclick="BuyStats('_gold')">Max</button>
+						</div>
+					</div>
+				</div>
+				<div id="active_stuff">			
+					<div id="active_stuff_head">
+						<div class="hover_div">
+							<img id="helmet" src="ressources/images/default/active_item.png" onclick="alert('toto')"/>
+							<div class="hoverable_div" id="helmet_info">
+								No helmet
+							</div>
+						</div>
+					</div>
+					<div id="active_stuff_arms">
+						<div class="hover_div">
+							<img id="bracelet1" src="ressources/images/default/active_item.png"/>
+							<div class="hoverable_div" id="bracelet1_info">
+								No bracelet (1)
+							</div>
+						</div>
+						<div class="hover_div">
+							<img id="armor" src="ressources/images/default/active_item.png"/>
+							<div class="hoverable_div" id="armor_info">
+								No armor
+							</div>
+						</div>
+						<div class="hover_div">
+							<img id="bracelet2" src="ressources/images/default/active_item.png"/>
+							<div class="hoverable_div" id="bracelet2_info">
+								No bracelet (2)
+							</div>
+						</div>
+					</div>
+					<div id="active_stuff_hands">
+						<div class="hover_div">
+							<img id="weapon" src="ressources/images/default/active_item.png"/>
+							<div class="hoverable_div" id="weapon_info">
+								No weapon
+							</div>
+						</div>
+						<div class="hover_div">
+							<img id="belt" src="ressources/images/default/active_item.png"/>
+							<div class="hoverable_div" id="belt_info">
+								No belt
+							</div>
+						</div>
+						<div class="hover_div">
+							<img id="gloves" src="ressources/images/default/active_item.png"/>
+							<div class="hoverable_div" id="gloves_info">
+								No gloves
+							</div>
+						</div>
+					</div>
+					<div id="active_stuff_pants">
+						<div class="hover_div">
+							<img id="pants" src="ressources/images/default/active_item.png"/>
+							<div class="hoverable_div" id="pants_info">
+								No pants
+							</div>
+						</div>
+					</div>
+					<div id="active_stuff_boots">
+						<div class="hover_div">
+							<img id="boots" src="ressources/images/default/active_item.png"/>
+							<div class="hoverable_div" id="boots_info">
+								No boots
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>			
+			<div id="combat_div">
+				<div id="player_lifebar">
+					<div id="player_lifebar_red">
+					</div>
+					<div id="player_lifebar_green">
+					</div>
+				</div>
+				<div id="combat_action_div">
+					<div id="mob_level_div">
+						Level
+						<span id="mob_level">
+							x
+						</span>
+					</div>
+					<div id="action_div">
+						<div id="player_combat_action">
+							<div id="magic_actions">							
+								<button onclick="DoTurn('magic','return');"><img src="ressources/images/actions/return_magic.png"/></button>
+								<button onclick="DoTurn('magic','critical');"><img src="ressources/images/actions/critical_magic.png"/></button>
+								<button onclick="DoTurn('magic','parade');"><img src="ressources/images/actions/parade_magic.png"/></button>
+							</div>
+							<div id="strength_actions">
+								<button onclick="DoTurn('strength','return');"><img src="ressources/images/actions/return_strength.png"/></button>
+								<button onclick="DoTurn('strength','critical');"><img src="ressources/images/actions/critical_strength.png"/></button>
+								<button onclick="DoTurn('strength','parade');"><img src="ressources/images/actions/parade_strength.png"/></button>
+							</div>
+							<div id="dexterity_actions">
+								<button onclick="DoTurn('dexterity','return');"><img src="ressources/images/actions/return_dexterity.png"/></button>
+								<button onclick="DoTurn('dexterity','critical');"><img src="ressources/images/actions/critical_dexterity.png"/></button>
+								<button onclick="DoTurn('dexterity','parade');"><img src="ressources/images/actions/parade_dexterity.png"/></button>
+							</div>
+						</div>						
+						<div id="number_of_attack">
+							<textarea id="number_of_attack_text">
+							</textarea>
+						</div>
+						<div id="mob_combat_action">
+							<img id="mob_combat_action_src" src="ressources/images/actions/return_dexterity.png"/>
+						</div>
+					</div>
+					<div id="combat_info">
+						<textarea id="combat_info_text" disabled="true">
+						</textarea>
+					</div>
+				</div>
+				<div id="mob_lifebar">
+					<div id="mob_lifebar_red">
+					</div>
+					<div id="mob_lifebar_green">
+					</div>
+				</div>
+				<div id="mob_div">
+					<div id="mob_stats_sheet">
+						<div id="mob_stats_sheet_title">
+							Mob Stats Sheet
+						</div>
+						<div id="_life_mob" class="stats_line">					
+							<img src="ressources/images/mini_icons/_life.png" />
+							Life:
+							<span id="_reallife_stat_mob">
+								xx
+							</span>
+							/
+							<span id="_life_stat_mob" class="bold">
+								xx
+							</span>
+						</div>
+						<div id="_magic_mob" class="stats_line">					
+							<img src="ressources/images/mini_icons/_magic.png" />
+							Magic:
+							<span id="_magic_stat_mob" class="bold">
+								xx
+							</span>
+						</div>
+						<div id="_strength_mob" class="stats_line">					
+							<img src="ressources/images/mini_icons/_strength.png" />
+							Strength:
+							<span id="_strength_stat_mob" class="bold">
+								xx
+							</span>
+						</div>
+						<div id="_dexterity_mob" class="stats_line">					
+							<img src="ressources/images/mini_icons/_dexterity.png" />
+							Dexterity:
+							<span id="_dexterity_stat_mob" class="bold">
+								xx
+							</span>
+						</div>
+						<div id="_damage_increase_magic_mob" class="stats_line">					
+							<img src="ressources/images/mini_icons/_damage_increase_magic.png" />
+							Magic Damage:
+							<span id="_damage_increase_magic_stat_mob" class="bold">
+								xx
+							</span>
+						</div>
+						<div id="_damage_reduction_magic_mob" class="stats_line">					
+							<img src="ressources/images/mini_icons/_damage_reduction_magic.png" />
+							Magic Damage Reduction:
+							<span id="_damage_reduction_magic_stat_mob" class="bold">
+								xx
+							</span>
+						</div>
+						<div id="_damage_reduction_magic_percent_mob" class="stats_line">					
+							<img src="ressources/images/mini_icons/_damage_reduction_magic_percent.png" />
+							Magic %Damage Reduction:
+							<span id="_damage_reduction_magic_percent_stat_mob" class="bold">
+								xx
+							</span>
+						</div>
+						<div id="_damage_increase_strength_mob" class="stats_line">					
+							<img src="ressources/images/mini_icons/_damage_increase_strength.png" />
+							Strength Damage:
+							<span id="_damage_increase_strength_stat_mob" class="bold">
+								xx
+							</span>
+						</div>
+						<div id="_damage_reduction_strength_percent_mob" class="stats_line">					
+							<img src="ressources/images/mini_icons/_damage_reduction_strength_percent.png" />
+							Strength %Damage Reduction:
+							<span id="_damage_reduction_strength_percent_stat_mob" class="bold">
+								xx
+							</span>
+						</div>
+						<div id="_damage_increase_dexterity_mob" class="stats_line">					
+							<img src="ressources/images/mini_icons/_damage_increase_dexterity.png" />
+							Dexterity Damage:
+							<span id="_damage_increase_dexterity_stat_mob" class="bold">
+								xx
+							</span>
+						</div>
+						<div id="_damage_reduction_dexterity_mob" class="stats_line">					
+							<img src="ressources/images/mini_icons/_damage_reduction_dexterity.png" />
+							Dexterity Damage Reduction:
+							<span id="_damage_reduction_dexterity_stat_mob" class="bold">
+								xx
+							</span>
+						</div>
+						<div id="_damage_reduction_dexterity_percent_mob" class="stats_line">					
+							<img src="ressources/images/mini_icons/_damage_reduction_dexterity_percent.png" />
+							Dexterity %Damage Reduction:
+							<span id="_damage_reduction_dexterity_percent_stat_mob" class="bold">
+								xx
+							</span>
+						</div>
+						<div id="_return_percent_mob" class="stats_line">					
+							<img src="ressources/images/mini_icons/_return_percent.png" />
+							Returned Damage:
+							<span id="_return_percent_stat_mob" class="bold">
+								xx
+							</span>
+						</div>
+						<div id="_critical_chance_mob" class="stats_line">					
+							<img src="ressources/images/mini_icons/_critical_chance.png" />
+							Critical Chance:
+							<span id="_critical_chance_stat_mob" class="bold">
+								xx
+							</span>
+						</div>
+						<div id="_parade_chance_mob" class="stats_line">					
+							<img src="ressources/images/mini_icons/_parade_chance.png" />
+							Parade Chance:
+							<span id="_parade_chance_stat_mob" class="bold">
+								xx
+							</span>
+						</div>
+						<div id="_poison_mob" class="stats_line">					
+							<img src="ressources/images/mini_icons/_poison.png" />
+							Poison:
+							<span id="_poison_stat_mob" class="bold">
+								xx
+							</span>
+							&nbsp
+							<span id="_poisoned_stat_mob" class="bold red">
+								xx
+							</span>
+						</div>
+						<div id="_vampirism_mob" class="stats_line">					
+							<img src="ressources/images/mini_icons/_vampirism.png" />
+							Vampirism:
+							<span id="_vampirism_stat_mob" class="bold">
+								xx
+							</span>
+						</div>
+					</div>
+					<div id="mob_picture">
+						<img id="mob_picture_src" src="ressources/images/mobs/0.png" />
+					</div>
+				</div>
+			</div>			
+		</div>
+		<div id="shop">
+			<div class="shop_item" id="shop_diamond">
+				<div class="shop_img">
+					<img src="ressources/images/shop/diamonds.png" />
+				</div>
+				<div class="shop_prices">
+					<div>
+						<div>
+							<span id="_diamond_shop_cost">
+								xx
+							</span>
+							&nbsp
+							<img src="ressources/images/default/coins.png" />
+						</div>
+						<div>
+							<button onclick="BuyShop('_diamond_shop',1)">+1</button>
+						</div>
+						<div>
+							<button onclick="BuyShop('_diamond_shop',10)">+10</button>
+						</div>
+						<div>
+							<button onclick="BuyShop('_diamond_shop',100)">+100</button>
+						</div>
+						<div>
+							<button onclick="BuyShops('_diamond_shop')">Max</button>
+						</div>
+					</div>
+				</div>
+			</div>			
+			<div class="shop_item" id="shop_heal">
+				<div class="shop_img">
+					<img src="ressources/images/shop/heal.png" />
+				</div>
+				<div class="shop_prices">
+					<div>
+						<div>
+							<span id="_heal_shop_cost">
+								xx
+							</span>
+							&nbsp
+							<img src="ressources/images/default/coins.png" />
+						</div>
+						<div>
+							<button onclick="BuyShop('_heal_shop',1)">+1</button>
+						</div>
+						<div>
+							<button onclick="BuyShop('_heal_shop',10)">+10</button>
+						</div>
+						<div>
+							<button onclick="BuyShop('_heal_shop',100)">+100</button>
+						</div>
+						<div>
+							<button onclick="BuyShops('_heal_shop')">Max</button>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="shop_item" id="shop_poison">
+				<div class="shop_img">
+					<img src="ressources/images/shop/poison.png" />
+				</div>
+				<div class="shop_prices">
+					<div>
+						<div>
+							<span id="_poison_shop_cost">
+								xx
+							</span>
+							&nbsp
+							<img src="ressources/images/default/coins.png" />
+						</div>
+						<div>
+							<button onclick="BuyShop('_poison_shop',1)">+1</button>
+						</div>
+						<div>
+							<button onclick="BuyShop('_poison_shop',10)">+10</button>
+						</div>
+						<div>
+							<button onclick="BuyShop('_poison_shop',100)">+100</button>
+						</div>
+						<div>
+							<button onclick="BuyShops('_poison_shop')">Max</button>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="shop_item">
+				<div class="shop_img" id="shop_coins">
+					<img src="ressources/images/shop/coins.png" />
+				</div>
+				<div class="shop_prices">
+					<div>
+						<div>
+							<span id="_coins_shop_cost">
+								xx
+							</span>
+							&nbsp
+							<img src="ressources/images/default/diamonds.png" />
+						</div>
+						<div>
+							<button onclick="BuyShop('_coins_shop',1)">+5</button>
+						</div>
+						<div>
+							<button onclick="BuyShop('_coins_shop',10)">+50</button>
+						</div>
+						<div>
+							<button onclick="BuyShop('_coins_shop',100)">+500</button>
+						</div>
+						<div>
+							<button onclick="BuyShops('_coins_shop')">Max</button>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="shop_item">
+				<div class="shop_img" id="shop_coins">
+					<img src="ressources/images/shop/hit.png" />
+				</div>
+				<div class="shop_prices">
+					<div>
+						<div>
+							<span id="_hit_shop_cost">
+								xx
+							</span>
+							&nbsp
+							<img src="ressources/images/mini_icons/_life.png" />
+						</div>
+						<div>
+							<button onclick="BuyShop('_hit_shop',1)">+1</button>
+						</div>
+						<div>
+							<button onclick="BuyShop('_hit_shop',10)">+10</button>
+						</div>
+						<div>
+							<button onclick="BuyShop('_hit_shop',100)">+100</button>
+						</div>
+						<div>
+							<button onclick="BuyShops('_hit_shop')">Max</button>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="shop_item">
+				<div class="shop_img" id="shop_coins">
+					<img src="ressources/images/shop/death.png" />
+				</div>
+				<div class="shop_prices">
+					<div>
+						<div>
+							<img src="ressources/images/mini_icons/_life.png" />
+						</div>
+						<div>
+							<button onclick="PlayerDeath()">Death</button>
+						</div>
+						<div>
+							<button onclick="PlayerDeath()">Death</button>
+						</div>
+						<div>
+							<button onclick="PlayerDeath()">Death</button>
+						</div>
+						<div>
+							<button onclick="PlayerDeath()">Death</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+	<script type="text/javascript" src="RogueJS.js"></script>
+</html> 

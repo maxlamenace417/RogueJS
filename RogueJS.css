@@ -1,0 +1,292 @@
+#active_stuff{
+	height:auto;
+	padding:5px;
+	text-align:center;
+	border-radius: 10px 25px;
+	background-color: rgb(242, 234, 217);	
+	box-shadow: 0 0 3pt 2pt brown;
+}
+#active_stuff_head{
+	width:50px;
+	margin: auto;
+	padding:auto;
+	text-align:center;
+}
+#active_stuff_head .hover_div{
+	display:inline;
+}
+#active_stuff_arms{
+	margin: auto;
+	padding:auto;
+	width: 150px;	
+	text-align:center;
+	display:inline-block;
+}
+#active_stuff_arms .hover_div{
+	display:inline;
+}
+#active_stuff_hands{
+	margin: auto;
+	padding:auto;
+	width: 150px;	
+	text-align:center;
+}
+#active_stuff_hands .hover_div{
+	display:inline;
+}
+#active_stuff_pants{
+	margin: auto;
+	padding:auto;
+	width: 50px;	
+	text-align:center;
+}
+#active_stuff_pants .hover_div{
+	display:inline;
+}
+#active_stuff_boots{
+	margin: auto;
+	padding:auto;
+	width: 50px;	
+	text-align:center;
+}
+#active_stuff_boots .hover_div{
+	display:inline;
+}
+.hover_div{
+	margin:0;
+	padding:0;
+}
+.hoverable_div {
+	display: none;
+}
+.hover_div:hover .hoverable_div {
+	display: block;  
+	position:fixed;
+	overflow:hidden;
+	background-color: white;
+	padding:2px 5px;
+	border-radius: 10px 25px;
+	box-shadow: 0 0 3pt 2pt brown;
+}
+#character_stats_sheet{
+	margin-bottom:10px;
+}
+#character_class button{
+	display:inline;
+}
+#money{
+	width:90%;
+}
+#number_of_attack{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+#save{
+	width:10%;
+}
+#menu{	
+	margin: 5px;
+	padding:2px 5px;	
+	border-radius: 10px 25px;
+	box-shadow: 0 0 3pt 2pt brown;
+	background-color: rgb(242, 234, 217);
+	display:flex;
+}
+#coins{	
+	display:inline;
+}
+#diamonds{	
+	display:inline;
+}
+#character_stats_sheet{
+	border-radius: 10px 25px;
+	box-shadow: 0 0 3pt 2pt brown;
+	padding:5px;	
+	background-color: rgb(242, 234, 217);
+}
+#character_div{
+	width:30%;
+	min-width:550px;
+	margin-right:10px;
+}
+body{
+	min-width:1600px;
+}
+#mob_level_div{
+	text-align:center;
+	font-size:40px;
+	font-weight:bold;
+	margin-bottom:10px;
+}
+#mob_lifebar_red{
+	border-radius: 20px 20px 0px 0px;
+	border: 5px solid rgb(173, 14, 22);
+	height:10%;
+	width:100%;
+	background-color:red;
+	margin:0px;
+	padding:0px;
+}
+#mob_lifebar_green{
+	width:100%;
+	height:90%;
+	border-radius: 0px 0px 20px 20px;
+	border: 5px solid rgb(9, 100, 20);
+	background-color:green;
+	margin:0px;
+	padding:0px;
+}
+#mob_lifebar{
+	width:50px;
+	margin-bottom:30px;
+	margin-top:10px;
+	margin-right:10px;
+}
+#player_lifebar_red{
+	border-radius: 20px 20px 0px 0px;
+	border: 5px solid rgb(173, 14, 22);
+	height:10%;
+	width:100%;
+	background-color:red;
+	margin:0px;
+	padding:0px;
+}
+#player_lifebar_green{
+	width:100%;
+	height:90%;
+	border-radius: 0px 0px 20px 20px;
+	border: 5px solid rgb(9, 100, 20);
+	background-color:green;
+	margin:0px;
+	padding:0px;
+}
+#player_lifebar{
+	width:50px;
+	margin-bottom:30px;
+	margin-top:10px;
+	margin-left:5px;
+	margin-right:5px;
+}
+#combat_action_div{
+	width:65%;
+}
+#action_div{
+	display:flex;
+}
+#mob_div{
+	width:35%;
+}
+textarea {
+  resize: none;
+}
+#combat_info_text{
+	width:100%;
+	height:420px;
+}
+#combat_info{
+	margin: 10px;
+}
+#combat_div{
+	min-width:900px;
+	width:70%;
+	background-color: rgb(242, 234, 217);
+	border-radius: 10px 25px;
+	box-shadow: 0 0 3pt 2pt brown;
+	display:flex;
+}
+#character_stats_sheet_title{
+	text-decoration: underline;
+}
+#mob_stats_sheet_title{
+	text-decoration: underline;
+}
+#mob_stats_sheet{
+	padding:5px;
+	margin:10px;
+	background-color: rgb(242, 234, 217);
+	border-radius: 10px 25px;
+	box-shadow: 0 0 3pt 2pt brown;
+}
+#shop{
+	background-color: rgb(242, 234, 217);
+	border-radius: 10px 25px;
+	box-shadow: 0 0 3pt 2pt brown;
+	height:160px;
+	margin: 5px;
+	padding:2px 5px;
+	margin-top:10px;
+}
+#magic{
+	background-color:white;
+}
+#mob_picture{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+#main_div{
+	margin:5px;
+	margin-top:10px;
+	display:flex;
+}
+.stats_buttons{
+	float:right;
+}
+.red{
+	color:red;
+}
+#mob_combat_action{
+	float:right;
+	width:50%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+#player_combat_action{
+	float:left;
+	width:50%;
+}
+#player_combat_action div{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.stats_line{
+	margin:5px;
+}
+.stats_line:hover{
+	background-color: white;
+	margin:5px;
+}
+.bold{
+	font-weight:bold;
+}
+.shop_item{
+	display:flex;
+	margin:10px;
+	padding-right:15px;
+	border-right: 2px solid brown;
+}
+.shop_prices button{
+	width:52px;
+}
+.shop_prices div div{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.shop_img{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-right:5px;
+}
+.shop_prices{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+#shop{
+	display:flex;
+}
