@@ -1520,14 +1520,6 @@ function DoTurns(attacktype,effecttype){
 				mob.poisoned=mob.poisoned+character.getAllStats(_poison);
 				WriteInfo("Player increases monster poison dot by "+character.getAllStats(_poison));
 			}
-			if(character.getAllStats(_vampirism)>0){
-				character.IncreaseLife(character.getAllStats(_vampirism));
-				WriteInfo("Player steals "+character.getAllStats(_vampirism)+" life point");
-			}
-			if(character.getAllStats(_poison)>0){
-				mob.poisoned=mob.poisoned+character.getAllStats(_poison);
-				WriteInfo("Player increases monster poison dot by "+character.getAllStats(_poison));
-			}
 			if(mob.IsDead()){
 				PlayerWin();
 				EndFight=true;
